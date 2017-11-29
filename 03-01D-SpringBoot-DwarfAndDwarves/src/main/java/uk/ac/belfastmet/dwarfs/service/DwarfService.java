@@ -1,53 +1,23 @@
-package uk.ac.belfastmet.dwarfs.controller;
+package uk.ac.belfastmet.dwarfs.service;
 
 import java.util.ArrayList;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import uk.ac.belfastmet.dwarfs.domain.Dwarf;
-import uk.ac.belfastmet.dwarfs.service.DwarfService;
 
-import org.springframework.web.bind.annotation.GetMapping;
+@Service
+public class DwarfService {
 
-@Controller
-@RequestMapping("/")
-public class DisneyController {
+	private ArrayList<Dwarf> disneyDwarfs;
+	private ArrayList<Dwarf>tolkienDwarfs;
 	
-	@Autowired
-	private DwarfService dwarfService;
 	
- 
-	
-	@GetMapping("/")
-	public String homePage(Model model) {
-		
-		return "homePage";
+	public DwarfService() {
+		super();
 	}
 
-	@GetMapping("/disney")
-	public String disney(Model model) {
-		model.addAttribute("pageTitle", "Disney!");
-		this.dwarfService = new DwarfService();
-		model.addAttribute("dwarfs", this.dwarfService.getDisneyDwarfs());
-		return "disneyPage";
-	}
-	
-	@GetMapping("/tolkien")
-	public String tolkien(Model model) {
-		model.addAttribute("pageTitle", "Tolkien!");
-		this.dwarfService = new DwarfService();
-		model.addAttribute("dwarfs", this.dwarfService.getTolkienDwarfs());
-		return "tolkienPage";
-	}
-	
-	
-	
-	
-	public ArrayList<Dwarf> getDwarfs(){
+	public ArrayList<Dwarf> getDisneyDwarfs(){
 		//function will return an array of dwarfs
 		ArrayList<Dwarf> dwarfs = new ArrayList<Dwarf>();
 		
@@ -70,7 +40,7 @@ public class DisneyController {
 		return dwarfs;
 	}
 	
-	public ArrayList<Dwarf> getDwarves(){
+	public ArrayList<Dwarf> getTolkienDwarfs(){
 		//function will return an array of dwarfs
 		ArrayList<Dwarf> dwarfs = new ArrayList<Dwarf>();
 	
@@ -104,15 +74,7 @@ public class DisneyController {
 		return dwarfs;
 	}
 	
-
 	
-	//example only
-	@GetMapping("/bingo")
-	public String bingo(Model model) {
-		
-		return "There was a dog in our back yard...";
 	}
 	
 	
-
-}
