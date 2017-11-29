@@ -21,6 +21,9 @@ public class Main {
 		sleepy.setName("Grumpy");
 		sleepy.setAuthor("Disney");
 		sleepy.setImage("grumpy.png");
+		
+		
+		
 	}
 
 }
