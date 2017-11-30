@@ -6,16 +6,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import uk.ac.belfastmet.buildings.service.FloorAreaService;
+
 import org.springframework.web.bind.annotation.GetMapping;
 
-public class BuildingController {
+@Controller
+@RequestMapping("/")
+public class FloorAreaController {
 	
-	@Controller
-	@RequestMapping("/")
-	public class BuildingController {
-		
-		@Autowired
-		private BuildingService buildingService;
+		//@Autowired
+		private FloorAreaService floorAreaService;
 		
 	 
 		
@@ -26,13 +27,13 @@ public class BuildingController {
 		}
 
 		@GetMapping("/floorarea")
-		public String disney(Model model) {
+		public String floorarea(Model model) {
 			model.addAttribute("pageTitle", "floor area!");
-			this.buildingService = new BuildingService();
-			model.addAttribute("buildings", this.buildingService.getfloorAreaBuilding());
+			this.floorAreaService = new FloorAreaService();
+			model.addAttribute("largeFABuildings", this.floorAreaService.getfloorArea());
 			return "floorAreaPage";
 		}
 	
 	}
 
-}
+

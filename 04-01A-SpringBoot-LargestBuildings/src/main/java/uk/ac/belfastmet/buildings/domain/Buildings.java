@@ -3,23 +3,29 @@ package uk.ac.belfastmet.buildings.domain;
 public class Buildings {
 
 	
-	private String bnumber, name, country, place, description;
+	private String bnumber, name, country, place;
 	private String floorArea, footprint, usableVolume, image;
 	
+
 	
-	public Buildings(String bnumber, String name, String country, String place, String description, String floorArea, String footprint, String usableVolume, String image) {
+	public Buildings(String bnumber, String name, String country, String place, String floorArea, String footprint, String usableVolume, String image) {
 		
 		this.bnumber=bnumber;
 		this.name = name;
 		this.country = country;
 		this.place = place;
-		this.description = description;
 		this.floorArea = floorArea;
 		this.footprint = footprint;
 		this.usableVolume = usableVolume;
 		this.image = image;
 		
 	}
+
+
+	public Buildings() {
+	
+	}
+	
 
 	public String getBnumber() {
 		return bnumber;
@@ -61,14 +67,7 @@ public class Buildings {
 	}
 
 
-	public String getDescription() {
-		return description;
-	}
 
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
 
 
 	public String getFloorArea() {
@@ -113,9 +112,5 @@ public class Buildings {
 
 	
 
-	public Buildings() {
-	
-	}
-	
 	
 }
