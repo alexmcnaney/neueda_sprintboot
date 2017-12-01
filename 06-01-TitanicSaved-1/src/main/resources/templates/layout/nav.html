@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+
+</head>
+<title th:text="${pageTitle}">Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<body>
+<div class="container">
+<br />
+
+<nav class="navbar navbar-inverse" th:fragment="navFragment">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Largest Buildings</a>
+    </div>
+
+      <ul class="nav navbar-nav navbar-right">
+   
+      <li class="active"><a href="/">HOME</a></li>
+       <li><a href="/floorarea/">FLOOR AREA</a></li>
+      <li><a href="/footprint/">FOOTPRINT</a></li>
+          <li><a href="/usableVolume/">USABLE VOLUME</a></li>
+   <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+ 
+ </nav>
+</div>
+
+
+
+
+</body>
+
+
+</html>

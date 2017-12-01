@@ -1,9 +1,22 @@
 package uk.ac.belfastmet.dwarfs.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity 
 public class Dwarf {
 	
-private String name, author, image;
 	
+	public Dwarf() {
+		super();
+	}
+
+
+@Id
+@GeneratedValue
+private Integer dwarfId;
+private String name, author, image;
 	
 	public Dwarf(String name, String author, String image) {
 		
@@ -12,10 +25,7 @@ private String name, author, image;
 		this.image = image;
 			
 	}
-	
-	public Dwarf() {
-		
-	}
+
 	
 	public void DisplayDwarf(){
 		
