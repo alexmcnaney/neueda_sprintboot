@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title th:text="${pageTitle}">Tolkien Dwarfs</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<body>
+<nav th:replace="layout/nav :: navFragment"></nav>
+<div class="container">
+<h1 align="center"> The Company of Thorin </h1>
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Picture</th>
+    </tr>
+    </thead>
+    <tbody>
+  <tr th:each="dwarf : ${dwarfs}">
+    <td th:text="${dwarf.name}">Happy</td>
+    <td><img src="../static/Thorin.png" th:src="${dwarf.image}" width="100" height="130"/></td>
+ 
+  </tr>
+</tbody>
+</table>
+</div>
+
+</body>
+</head>
+</html>

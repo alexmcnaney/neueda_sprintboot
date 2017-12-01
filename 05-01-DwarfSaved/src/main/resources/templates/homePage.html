@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+</head>
+<title th:text="${pageTitle}">Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<nav th:replace="layout/nav :: navFragment"></nav>
+<body>
+ <h1 align="center"> Welcome! </h1>
+
+
+<div class="container">
+<br />
+<div align="center">
+<img src="estoniandwarf.png" width="580" height="290" />
+
+ <h4> So you're a fan of dwarfs ey? </h4>
+</div>
+<div>
+<br />
+<br />
+
+<h3 align="center"> Select from the options provided</h3>
+<a href="disney"><img src="waltdisney.png" alt="Go to Disney Dwarfs!" width="250" height="290" align="left"/>
+</a>
+
+
+<a href="tolkien">
+<img src="lordoftherings.png" alt="Go to The Company of Thorin" width="250" height="290" align="right"/>
+</a>
+
+</div>
+
+
+</div>
+</body>
+</html>

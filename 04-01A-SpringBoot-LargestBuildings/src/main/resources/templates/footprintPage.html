@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title th:text="${pageTitle}">Largest Footprint</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+</head>
+<body>
+<nav th:replace="layout/nav :: navFragment"></nav>
+	<div class="container">
+		<h1 align="center"> Footprint </h1>
+		<br />
+		
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Number</th>
+					<th>Name</th>
+					<th>Country</th>
+					<th>Place</th>
+					<th>Footprint</th>
+					<th>Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="largeFBuilding : ${largeFBuildings}">
+					<td th:text="${largeFBuilding.bnumber}"></td>
+					<td th:text="${largeFBuilding.name}"></td>
+					<td th:text="${largeFBuilding.country}"></td>
+					<td th:text="${largeFBuilding.place}"></td>
+					<td th:text="${largeFBuilding.footprint}"></td>
+					<td><img src="../static/lol.jpg" th:src="@{/} + ${largeFBuilding.image}" width="100" height="130"/></td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+
+
+
+
+
+</html>

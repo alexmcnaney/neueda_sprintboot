@@ -31,17 +31,13 @@ public class DisneyController {
 	@GetMapping("/disney")
 	public String disney(Model model) {
 		model.addAttribute("pageTitle", "Disney!");
-		this.dwarfService = new DwarfService();
-		model.addAttribute("dwarfs", this.dwarfService.getDisneyDwarfs());
 		return "disneyPage";
 	}
 	
 	@GetMapping("/tolkien")
 	public String tolkien(Model model) {
 		model.addAttribute("pageTitle", "Tolkien!");
-		this.dwarfService = new DwarfService();
-		model.addAttribute("dwarfs", this.dwarfService.getTolkienDwarfs());
-		return "tolkienPage";
+			return "tolkienPage";
 	}
 	
 	
