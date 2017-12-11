@@ -26,9 +26,34 @@ public class PassengerController {
 		
 			model.addAttribute("pageTitle", "Passenger!");
 			//name of table
-			model.addAttribute("passengers", passengerRepository.findByName("Passenger"));
+			model.addAttribute("passengers", passengerRepository.findByOrderByName());
 				
 		
 		return "passengersPage";
 	}
+	
+	@GetMapping("/survivors")
+	public String passengerSurvived(Model model) {
+		
+			model.addAttribute("pageTitle", "Surviors!");
+			//name of table
+			model.addAttribute("passengers", passengerRepository.findBySurvived(1));
+				
+		
+		return "survivedPage";
+	}
+	
+	@GetMapping("/parentchild")
+	public String passengerClass(Model model) {
+		
+			model.addAttribute("pageTitle", "Parent & Child");
+			//name of table
+			model.addAttribute("passengers", passengerRepository.findByParch(1));
+				
+		
+		return "parchPage";
+	}
+
+	
+	
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+</head>
+<title th:text="${pageTitle}">Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<body>
+<nav th:replace="layout/nav :: navFragment"></nav>
+<h1 align="center"> Forms </h1>
+<div class="container">
+
+<form action="/results" method="POST">
+
+<fieldset>
+<legend> Personal Information </legend>
+  First name:<br/>
+  <input type="text" name="firstname"/><br/>
+  Last name:<br/>
+  <input type="text" name="lastname"/>
+  
+  <br />
+  
+  <input type="radio" name="gender" value="male"/> Male<br/>
+  <input type="radio" name="gender" value="female"/> Female<br/>
+  <input type="radio" name="gender" value="other"/> Other
+  
+  <br />
+  </fieldset>
+    <input type="submit" value="Submit"/>
+
+
+
+
+
+</form>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

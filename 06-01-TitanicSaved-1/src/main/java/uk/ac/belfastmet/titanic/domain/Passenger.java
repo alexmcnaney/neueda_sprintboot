@@ -15,27 +15,28 @@ public class Passenger {
 	@Id
 	@GeneratedValue
 	private Integer passengerId;
-	private Integer survived, pclass, SibSp, parch;
-	private String name, sex, embarked, ticket;
+	private Integer survived, pclass, sib_sp, parch;
+	private String name, sex, embarked, ticket, cabin;
 	private Float fare, age;
 	
 	
-	public Passenger(Integer passengerId, Integer survived, Integer pclass, String name, Float age, Integer SibSp, Integer parch, String ticket, Float fare, String cabin, String embarked) {
+	public Passenger(Integer passengerId, Integer survived, Integer pclass, String name, Float age, Integer sib_sp, Integer parch, String ticket, Float fare, String embarked, String cabin) {
 		this.survived = survived;
 		this.pclass = pclass;
 		this.name = name;
 		this.age = age;
-		this.SibSp = SibSp;
+		this.sib_sp = sib_sp;
 		this.parch = parch;
 		this.ticket = ticket;
 		this.fare = fare;
 		this.embarked = embarked;
+		this.cabin = cabin;
 		
 		
 	}
 
 	
-	
+
 	public Integer getPassengerId() {
 		return passengerId;
 	}
@@ -66,14 +67,7 @@ public class Passenger {
 	}
 
 
-	public Integer getSibSp() {
-		return SibSp;
-	}
-
-
-	public void setSibSp(Integer sibSp) {
-		SibSp = sibSp;
-	}
+	
 
 
 	public Integer getParch() {
@@ -143,6 +137,24 @@ public class Passenger {
 
 	public void setAge(Float age) {
 		this.age = age;
+	}
+	
+	public Integer getSib_sp() {
+		return sib_sp;
+	}
+
+
+
+	public void setSib_sp(Integer sib_sp) {
+		this.sib_sp = sib_sp;
+	}
+	public String getCabin() {
+		return cabin;
+	}
+
+
+	public void setCabin(String cabin) {
+		this.cabin = cabin;
 	}
 
 
