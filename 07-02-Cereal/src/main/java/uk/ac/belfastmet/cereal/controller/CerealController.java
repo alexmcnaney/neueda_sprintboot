@@ -1,8 +1,11 @@
 package uk.ac.belfastmet.cereal.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,6 +51,29 @@ public class CerealController {
 		return "viewCerealPage";
 	}
 	
+	@GetMapping("/cereal/edit/{cerealId}")
+	public String editCereal(@PathVariable("cerealId") Integer cerealId, Model model) {
+		
+		model.addAttribute("pageTitle", "Edit cereal");
+		model.addAttribute("cereal", cerealRepository.findOne(cerealId));
+		return "editCerealPage";
+	
+		
+	}
+	
+	@GetMapping("/cereal/delete/{cerealId}")
+	public String deleteCereal(@PathVariable("cerealId") Integer cerealId) {
+		
+		cerealRepository.delete(cerealId);
+		return "redirect:/";
+	
+		
+	}
+	
+	
+	
+	
+	
 	
 	@GetMapping("/cereal/add")
 	public String createCereal(Model model) {
@@ -56,13 +82,33 @@ public class CerealController {
 		return "editCerealPage";
 	}
 	
-	@PostMapping("/cereal/save")
-	public String saveCereal(Cereal cereal) {
 	
-		Cereal savedCereal = cerealRepository.save(cereal);
-		savedCereal.getCerealId();
-		//redirecting user to the page with the new cereal id which was assigned by the database
-		return "redirect:/cereal/view/" + savedCereal.getCerealId();
+	
+	
+	
+	
+	
+	
+	@PostMapping("/cereal/save")
+	//the cereal must be valid (tags in cereal.java)
+	//binding result checks if it is valid
+	public String saveCereal(@Valid Cereal cereal, BindingResult bindingResult, Model model) {
+		
+		if(bindingResult.hasErrors()) {
+			
+			return "editCerealPage";
+			
+		}else {
+			
+			Cereal savedCereal = cerealRepository.save(cereal);
+			savedCereal.getCerealId();
+			//redirecting user to the page with the new cereal id which was assigned by the database
+			return "redirect:/cereal/view/" + savedCereal.getCerealId();
+			
+			
+		}
+	
+		
 	}
 
 			

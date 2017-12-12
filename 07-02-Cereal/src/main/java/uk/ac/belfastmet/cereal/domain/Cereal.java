@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Cereal {
 
@@ -14,9 +16,14 @@ public class Cereal {
 	@Id
 	@GeneratedValue
 	private Integer cerealId;
+	
+	@NotEmpty
 	private String manufacturer, name;
+	
+	
 	private Float energy, calories, protein, carbohydrate, sugars, fat, saturates, fibre, sodium, salt, iron;
 
+	
 	public Cereal(Integer cerealId, String manufacturer, String name, Float energy, Float calories, Float protein,
 			Float carbohydrate, Float sugars, Float fat, Float saturates, Float fibre, Float sodium, Float salt,
 			Float iron) {

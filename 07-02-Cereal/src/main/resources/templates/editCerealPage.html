@@ -22,6 +22,29 @@
 		<form class="form-horizontal" th:action="@{/cereal/save}"
 			th:object="${cereal}" method="post">
 
+
+			<!-- hidden field is important! -->
+			<input type="hidden" th:field="${cereal.cerealId}" />
+			
+						
+			<label class="col-md-2">Name</label>
+			
+			<div class="form-group"> 
+			<input type="text" class="form-control" th:field="${cereal.name}" />
+			<span th:if="${#fields.hasErrors('name')}" th:errors="${cereal.name}" 
+			th:class="help-block">Name Errors></span>
+			</div>
+			
+			
+			<label class="col-md-2">Manufacturer</label>
+			
+			<div class="form-group"> 
+			<input type="text" class="form-control" th:field="${cereal.manufacturer}" />
+			<span th:if="${#fields.hasErrors('manufacturer')}" th:errors="${cereal.manufacturer}" 
+			th:class="help-block">Manufacturer Errors></span>
+			</div>
+
+			
 			<table class="table table-striped">
 				<thead>
 					<tr>
