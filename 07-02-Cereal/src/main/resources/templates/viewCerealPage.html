@@ -13,16 +13,13 @@
 <body>
 	<nav th:replace="layout/nav :: navFragment"></nav>
 	<div class="jumbotron">
-		<h2 align="center">Cereal</h2>
+		<h2 align="center" th:text= "${cereal.name}"></h2>
 	</div>
 
 	<div class="container">
-	<div align="right"> <a href="/cereal/add">
-<button type="button" class="btn btn-default">Add New</button> </a> </div>
 		<table class="table table-hover">
 			<thead>
 				<tr>
-
 					<th>Name</th>
 					<th>Manufacturer</th>
 					<th>Calories</th>
@@ -31,14 +28,10 @@
 					<th>Fat</th>
 					<th>Fibre</th>
 					<th>Iron</th>
-					<th> </th>
-					<th> </th>
-					<th> </th>
-
-				</tr>
+									</tr>
 			</thead>
 			<tbody>
-				<tr th:each="cereal : ${cereals}">
+				<tr>
 					<td th:text="${cereal.name}"></td>
 					<td th:text="${cereal.manufacturer}"></td>
 					<td th:text="${cereal.calories}"></td>
@@ -47,14 +40,19 @@
 					<td th:text="${cereal.fat}"></td>
 					<td th:text="${cereal.fibre}"></td>
 					<td th:text="${cereal.iron}"></td>
-					<td><a href="#" th:href="@{cereal/view/} + ${cereal.cerealId}">
-					<button type="button" class="btn btn-primary">View </button> </a> </td>
-					<td><button type="button" class="btn btn-success">Edit </button> </td>
-					<td><button type="button" class="btn btn-danger">Delete</button> </td>
+				
 				</tr>
 			</tbody>
 		</table>
 	</div>
+	
+	
+   
+   
+   
+   
+   
+
 
 
 </body>

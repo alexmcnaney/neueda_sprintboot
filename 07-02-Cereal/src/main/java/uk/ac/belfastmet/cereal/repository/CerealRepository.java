@@ -6,6 +6,5 @@ import uk.ac.belfastmet.cereal.domain.Cereal;
 
 public interface CerealRepository extends CrudRepository<Cereal, Integer> {
 
-	
 	Iterable<Cereal> findByOrderByCerealId();
 }

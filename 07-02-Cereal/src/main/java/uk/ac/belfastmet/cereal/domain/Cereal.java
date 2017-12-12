@@ -6,19 +6,20 @@ import javax.persistence.Id;
 
 @Entity
 public class Cereal {
-	
+
 	public Cereal() {
 		super();
 	}
 
-	
 	@Id
 	@GeneratedValue
 	private Integer cerealId;
 	private String manufacturer, name;
 	private Float energy, calories, protein, carbohydrate, sugars, fat, saturates, fibre, sodium, salt, iron;
-	
-	public Cereal(Integer cerealId, String manufacturer, String name, Float energy, Float calories, Float protein, Float carbohydrate, Float sugars, Float fat, Float saturates, Float fibre, Float sodium, Float salt, Float iron) {
+
+	public Cereal(Integer cerealId, String manufacturer, String name, Float energy, Float calories, Float protein,
+			Float carbohydrate, Float sugars, Float fat, Float saturates, Float fibre, Float sodium, Float salt,
+			Float iron) {
 		this.cerealId = cerealId;
 		this.manufacturer = manufacturer;
 		this.name = name;
@@ -33,8 +34,7 @@ public class Cereal {
 		this.sodium = sodium;
 		this.salt = salt;
 		this.iron = iron;
-		
-		
+
 	}
 
 	public Integer getCerealId() {
@@ -52,8 +52,6 @@ public class Cereal {
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-
-
 
 	public String getName() {
 		return name;

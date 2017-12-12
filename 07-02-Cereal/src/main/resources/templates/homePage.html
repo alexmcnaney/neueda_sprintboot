@@ -11,14 +11,18 @@
 	
 </script>
 <body>
-<nav th:replace="layout/nav :: navFragment"></nav>
-<h1 align="center"> Titanic Passengers information </h1>
+	<nav th:replace="layout/nav :: navFragment"></nav>
+	<div class="jumbotron">
+		<h2 align="center">Welcome to Breakfast Buddy!</h2>
+		<h4 align="center">Your favourite meal of the day!</h4>
+	</div>
 
-<a href="passenger"><button type="button" class="btn btn-primary">All Passengers</button></a>
-<a href="survivors
-"><button type="button" class="btn btn-primary">Survivors</button></a>
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-primary">Primary</button>
+	<div align="center">
+		<h4>Select from one of the following options:</h4>
+		<a href="cereal"><button type="button" class="btn btn-primary">Cereals</button></a>
+		<a href="bread"><button type="button" class="btn btn-primary">Breads</button></a>
+		<a href="recipes"><button type="button" class="btn btn-primary">Recipes</button></a>
+	</div>
 
 
 
