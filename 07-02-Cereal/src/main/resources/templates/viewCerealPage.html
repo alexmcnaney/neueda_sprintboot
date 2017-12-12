@@ -17,33 +17,65 @@
 	</div>
 
 	<div class="container">
-		<table class="table table-hover">
+		
+	
+		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Name</th>
-					<th>Manufacturer</th>
-					<th>Calories</th>
-					<th>Carbohydrate</th>
-					<th>Energy</th>
-					<th>Fat</th>
-					<th>Fibre</th>
-					<th>Iron</th>
-									</tr>
+					<th>Nutrition</th>
+					<th>Value</th>
+				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td th:text="${cereal.name}"></td>
-					<td th:text="${cereal.manufacturer}"></td>
-					<td th:text="${cereal.calories}"></td>
-					<td th:text="${cereal.carbohydrate}"></td>
-					<td th:text="${cereal.energy}"></td>
-					<td th:text="${cereal.fat}"></td>
-					<td th:text="${cereal.fibre}"></td>
-					<td th:text="${cereal.iron}"></td>
-				
+					<td>Energy</td>
+					<td th:text="${cereal.energy}">1580</td>
+				</tr>
+				<tr>
+					<td>Calories</td>
+					<td th:text="${cereal.calories}">372</td>
+				</tr>
+				<tr>
+					<td>Protein</td>
+					<td th:text="${cereal.protein}">7</td>
+				</tr>
+				<tr>
+					<td>Carbohydrate</td>
+					<td th:text="${cereal.carbohydrate}">84</td>
+				</tr>
+				<tr>
+					<td>Sugars</td>
+					<td th:text="${cereal.sugars}">8</td>
+				</tr>
+				<tr>
+					<td>Fat</td>
+					<td th:text="${cereal.fat}">0.9</td>
+				</tr>
+				<tr>
+					<td>Saturates</td>
+					<td th:text="${cereal.saturates}">0.2</td>
+				</tr>
+				<tr>
+					<td>Fibre</td>
+					<td th:text="${cereal.fibre}">3</td>
+				</tr>
+				<tr>
+					<td>Sodium</td>
+					<td th:text="${cereal.sodium}">0.7</td>
+				</tr>
+				<tr>
+					<td>Salt</td>
+					<td th:text="${cereal.salt}">NA</td>
+			</tr>
+				<tr>
+					<td>Iron</td>
+					<td th:text="${cereal.iron}">8</td>
 				</tr>
 			</tbody>
 		</table>
+		
+		
+		
 	</div>
 	
 	
