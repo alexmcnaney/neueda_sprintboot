@@ -13,12 +13,12 @@
 <body>
 	<nav th:replace="layout/nav :: navFragment"></nav>
 	<div class="jumbotron">
-		<h2 align="center" th:text= "${cereal.name}"></h2>
+		<h2 align="center" th:text="${cereal.name}"></h2>
 	</div>
 
 	<div class="container">
-		
-	
+
+
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -66,24 +66,24 @@
 				<tr>
 					<td>Salt</td>
 					<td th:text="${cereal.salt}">NA</td>
-			</tr>
+				</tr>
 				<tr>
 					<td>Iron</td>
 					<td th:text="${cereal.iron}">8</td>
 				</tr>
 			</tbody>
 		</table>
-		
-		
-		
+
+
+
 	</div>
-	
-	
-   
-   
-   
-   
-   
+
+
+
+
+
+
+
 
 
 
