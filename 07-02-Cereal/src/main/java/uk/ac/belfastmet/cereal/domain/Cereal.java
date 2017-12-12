@@ -15,13 +15,13 @@ public class Cereal {
 	@Id
 	@GeneratedValue
 	private Integer cerealId;
-	private String manufacturer, cereal;
+	private String manufacturer, name;
 	private Float energy, calories, protein, carbohydrate, sugars, fat, saturates, fibre, sodium, salt, iron;
 	
-	public Cereal(Integer cerealId, String manufacturer, String cereal, Float energy, Float calories, Float protein, Float carbohydrate, Float sugars, Float fat, Float saturates, Float fibre, Float sodium, Float salt, Float iron) {
+	public Cereal(Integer cerealId, String manufacturer, String name, Float energy, Float calories, Float protein, Float carbohydrate, Float sugars, Float fat, Float saturates, Float fibre, Float sodium, Float salt, Float iron) {
 		this.cerealId = cerealId;
 		this.manufacturer = manufacturer;
-		this.cereal = cereal;
+		this.name = name;
 		this.energy = energy;
 		this.calories = calories;
 		this.protein = protein;
@@ -53,12 +53,14 @@ public class Cereal {
 		this.manufacturer = manufacturer;
 	}
 
-	public String getCereal() {
-		return cereal;
+
+
+	public String getName() {
+		return name;
 	}
 
-	public void setCereal(String cereal) {
-		this.cereal = cereal;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Float getEnergy() {
