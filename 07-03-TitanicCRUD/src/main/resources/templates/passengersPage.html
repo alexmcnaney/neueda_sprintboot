@@ -50,6 +50,15 @@
 					<td th:text="${passenger.sib_sp}"></td>
 					<td th:text="${passenger.parch}"></td>
 
+					<td><a href="#" th:href="@{passenger/view/} + ${passenger.passengerId}">
+					<button type="button" class="btn btn-primary">View </button> </a> </td>
+					
+					
+					<td><a href="#" th:href="@{passenger/edit/} + ${passenger.passengerId}">
+					<button type="button" class="btn btn-success">Edit </button></a> </td>
+					
+					<td><a href="#" th:href="@{passenger/delete/} + ${passenger.passengerId}">
+					<button type="button" class="btn btn-danger">Delete</button></a> </td>
 				</tr>
 			</tbody>
 		</table>

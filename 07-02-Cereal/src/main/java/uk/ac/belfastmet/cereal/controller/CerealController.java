@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import uk.ac.belfastmet.cereal.domain.Cereal;
 import uk.ac.belfastmet.cereal.repository.CerealRepository;
@@ -61,12 +62,16 @@ public class CerealController {
 	}
 
 	@GetMapping("/cereal/delete/{cerealId}")
-	public String deleteCereal(@PathVariable("cerealId") Integer cerealId) {
 
-		cerealRepository.delete(cerealId);
-		return "redirect:/";
+public String deleteCereal(@PathVariable("cerealId") Integer cerealId, 
+			RedirectAttributes redirectAttrs) {
+ 		
+ 		cerealRepository.delete(cerealId);
+		redirectAttrs.addFlashAttribute("message", "Cereal was deleted");
+ 		
+ 		return "redirect:/cereal";
 
-	}
+}
 
 	@GetMapping("/cereal/add")
 	public String createCereal(Model model) {

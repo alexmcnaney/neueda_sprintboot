@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-<title th:text="${pageTitle}">Parent and Child</title>
+<title th:text="${pageTitle}">Passenger Surviors</title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
@@ -14,36 +14,33 @@
 <body>
 	<nav th:replace="layout/nav :: navFragment"></nav>
 	<div class="container">
-		<h2 align="center">Parents and Child</h2>
-		<table class="table table-striped">
+		<h2 align="center">Passenger Surviors</h2>
+		<table class="table table-hover">
 			<thead>
-				<tr>
+				<tr class="success">
 					<th>Name</th>
 					<th>Age</th>
 					<th>Sex</th>
 					<th>Passenger Class</th>
-					<th>Sibling/Spouse</th>
 					<th>Embarked</th>
-					<th>Survived</th>
 					<th>Ticket</th>
-					
-					<th>Parch</th>
+					<th>Sibling/Spouse</th>
+					<th>Parent/Children</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="passenger : ${passengers}">
-				<td th:text="${passenger.name}"></td>
-				<td th:text="${passenger.age}"></td>
-				<td th:text="${passenger.sex}"></td>
-				<td th:text="${passenger.pclass}"></td>
-				<td th:text="${passenger.sib_sp}"></td>
-				<td th:text="${passenger.embarked}"></td>
-				<td th:text="${passenger.survived}"></td>
-				<td th:text="${passenger.ticket}"></td>
-				<td th:text="${passenger.parch}"></td>
+					<td th:text="${passenger.name}"></td>
+					<td th:text="${passenger.age}"></td>
+					<td th:text="${passenger.sex}"></td>
+					<td th:text="${passenger.pclass}"></td>
+					<td th:text="${passenger.embarked}"></td>
+					<td th:text="${passenger.ticket}"></td>
+					<td th:text="${passenger.sib_sp}"></td>
+					<td th:text="${passenger.parch}"></td>
 
-					
-					
+
+
 
 				</tr>
 			</tbody>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+</head>
+<title th:text="${pageTitle}">Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<body>
+	<nav th:replace="layout/nav :: navFragment"></nav>
+	<div class="jumbotron">
+		<h2 align="center">Add new cereal</h2>
+	</div>
+
+	<div class="container">
+
+
+		<form class="form-horizontal" th:action="@{/cereal/save}"
+			th:object="${cereal}" method="post">
+
+
+			<!-- hidden field is important! -->
+			<input type="hidden" th:field="${passenger.passengerId}" /> <label
+				class="col-md-2">Name</label>
+
+			<div class="form-group">
+				<input type="text" class="form-control" th:field="${passenger.name}" />
+				<span th:if="${#fields.hasErrors('name')}"
+					th:errors="${passenger.name}" th:class="help-block">Name
+					Errors></span>
+			</div>
+
+			<label class="col-md-2">Age</label>
+
+			<div class="form-group">
+				<input type="number" class="form-control"
+				th:field="${passenger.age}" /> 
+				<span th:if="${#fields.hasErrors('age')}"
+					th:errors="${passenger.age}" th:class="help-block">Age
+					Errors></span>
+			</div>
+			
+			<label class="col-md-2">Sex</label>
+
+			<div class="form-group">
+				<input type="text" class="form-control"
+					th:field="${passenger.sex}" /> 
+					<span th:if="${#fields.hasErrors('sex')}"
+					th:errors="${passenger.sex}" th:class="help-block">Sex
+					Errors></span>
+			</div>
+			
+	
+
+
+				<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Sex</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Passenger Class</td>
+					<td th:text="${passenger.pclass}">1580</td>
+				</tr>
+				<tr>
+					<td>Embarked</td>
+					<td th:text="${passenger.embarked}">372</td>
+				</tr>
+				<tr>
+					<td>Survived</td>
+					<td th:text="${passenger.survived}">7</td>
+				</tr>
+				<tr>
+					<td>Ticket</td>
+					<td th:text="${passenger.ticket}">84</td>
+				</tr>
+				<tr>
+					<td>Sibling/Spouse]</td>
+					<td th:text="${passenger.sib_sp}">8</td>
+				</tr>
+				<tr>
+					<td>Parent/Child</td>
+					<td th:text="${passenger.parch}">0.9</td>
+				</tr>
+				
+			</tbody>
+		</table>
+			<div align="center">
+				<button type="submit" class="btn btn-primary">Save</button>
+			</div>
+		</form>
+
+		<br />
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

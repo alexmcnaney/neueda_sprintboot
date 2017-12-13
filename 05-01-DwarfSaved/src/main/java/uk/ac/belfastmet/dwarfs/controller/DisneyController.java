@@ -16,13 +16,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequestMapping("/")
 public class DisneyController {
 	 
-	
-	
 	@Autowired
 	DwarfRepository dwarfRepository;
 	
-	
-	public DisneyController(DwarfRepository dwarfRepository) {
+		public DisneyController(DwarfRepository dwarfRepository) {
 		super();
 		this.dwarfRepository = dwarfRepository;
 	}
@@ -38,9 +35,9 @@ public class DisneyController {
 		@GetMapping("/disney")
 		public String disney(Model model) {
 		model.addAttribute("pageTitle", "Disney!");
-		model.addAttribute("dwarfs", dwarfRepository.findByOrderByName("Disney"));
+		model.addAttribute("dwarfs", dwarfRepository.findByAuthor("Disney"));
 			
-			return "disneyPage";
+		return "disneyPage";
 		}
 		
 		@GetMapping("/tolkien")
