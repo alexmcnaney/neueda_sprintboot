@@ -13,14 +13,14 @@
 <body>
 	<nav th:replace="layout/nav :: navFragment"></nav>
 	<div class="jumbotron">
-		<h2 align="center">Add new cereal</h2>
+		<h2 align="center">Add new passenger</h2>
 	</div>
 
 	<div class="container">
 
 
-		<form class="form-horizontal" th:action="@{/cereal/save}"
-			th:object="${cereal}" method="post">
+		<form class="form-horizontal" th:action="@{/passenger/save}"
+			th:object="${passenger}" method="post">
 
 
 			<!-- hidden field is important! -->
@@ -33,7 +33,7 @@
 					th:errors="${passenger.name}" th:class="help-block">Name
 					Errors></span>
 			</div>
-
+ 
 			<label class="col-md-2">Age</label>
 
 			<div class="form-group">

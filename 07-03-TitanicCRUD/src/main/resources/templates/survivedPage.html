@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-<title th:text="${pageTitle}">Passenger Surviors</title>
+<title th:text="${pageTitle}">Passenger Survivors</title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
@@ -14,7 +14,21 @@
 <body>
 	<nav th:replace="layout/nav :: navFragment"></nav>
 	<div class="container">
-		<h2 align="center">Passenger Surviors</h2>
+		<h2 align="center">Passenger Survivors</h2>
+		<br />
+
+		<div align="left">
+			<button type="button" onclick="goBack()" class="btn btn-info">Back</button>
+
+
+			<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+			<br /> <br />
+		</div>
 		<table class="table table-hover">
 			<thead>
 				<tr class="success">

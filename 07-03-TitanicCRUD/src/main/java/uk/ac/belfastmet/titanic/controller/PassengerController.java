@@ -86,17 +86,33 @@ public class PassengerController {
 	@GetMapping("/age")
 	public String passengerAge(Model model) {
 		
-			model.addAttribute("pageTitle", "Age");
+			model.addAttribute("pageTitle", "Passenger Age");
 			//name of table
-			model.addAttribute("passengers", passengerRepository.findByOrderByName());
+			model.addAttribute("passengers", passengerRepository.findByOrderByAge());
 				
 		
 		return "agePage";
 	}
 	
+	@GetMapping("/history")
+	public String titanicHistory(Model model) {
+		
+			model.addAttribute("pageTitle", "History");
+
+				
+		
+		return "historyPage";
+	}
 	
-	
-	
+	@GetMapping("/building")
+	public String titanicBuilding(Model model) {
+		
+			model.addAttribute("pageTitle", "History");
+
+				
+		
+		return "buildingPage";
+	}
 	
 	
 	@GetMapping("passenger/view/{passengerId}")
@@ -127,7 +143,12 @@ public String deletePassenger(@PathVariable("passengerId") Integer passengerId,
  		return "redirect:/passenger";
 
 }
-	
+	@GetMapping("/passenger/add")
+	public String createPassenger(Model model) {
+		model.addAttribute("pageTitle", "Add");
+		model.addAttribute("passenger", new Passenger());
+		return "editPassengerPage";
+	}
 	
 	@PostMapping("/passenger/save")
 

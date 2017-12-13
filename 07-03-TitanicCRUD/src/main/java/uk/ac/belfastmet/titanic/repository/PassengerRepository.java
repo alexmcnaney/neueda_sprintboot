@@ -11,6 +11,6 @@ public interface PassengerRepository extends CrudRepository<Passenger, Integer> 
 
 	Iterable<Passenger> findBySurvived(Integer integer);	
 	Iterable<Passenger> findByPclass(Integer integer);	
-	Iterable<Passenger> findByOrderByAge(Integer integer);
+	Iterable<Passenger> findByOrderByAge();
 
 }
