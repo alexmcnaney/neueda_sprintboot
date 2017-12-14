@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
@@ -149,7 +150,6 @@ public String deletePassenger(@PathVariable("passengerId") Integer passengerId,
 		model.addAttribute("passenger", new Passenger());
 		return "editPassengerPage";
 	}
-	
 	@PostMapping("/passenger/save")
 
 	// binding result checks if it is valid
@@ -165,9 +165,35 @@ public String deletePassenger(@PathVariable("passengerId") Integer passengerId,
 			savedPassenger.getPassengerId();
 		
 			return "redirect:/passenger/view/" + savedPassenger.getPassengerId();
-
 		}
+		
 	}
+	
+	
+//	@PostMapping("passenger/search")
+//	public String search(@RequestParam("searchField") String searchField,
+//			@RequestParam("searchString") String searchString, Model model) {
+//		
+//		if (searchField.equals("name")){
+//			
+//			model.addAttribute("pageTitle", "Search Passengers");
+//			model.addAttribute("passenger", passengerRepository.findByNameLike("%" + searchString + "%"));
+//		
+//	}else if (searchField.equals("embarked")) {
+//		
+//		model.addAttribute("pageTile", "Search Passengers");
+//		model.addAttribute("passenger", passengerRepository.findByEmbarked(searchString));
+//		
+//	}else if(searchField.equals("passengerClass")) {
+//		
+//		Integer pClass = Integer.parseInt(searchString);
+//		model.addAttribute("pageTitle", "Search Passengers");
+//		model.addAttribute("passenger", passengerRepository.findByPclass(pClass));
+//	}
+//		return "passengersPage";		
+//
+//	}
+
 	
 	
 }

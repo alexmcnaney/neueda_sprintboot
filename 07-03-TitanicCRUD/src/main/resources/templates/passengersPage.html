@@ -10,15 +10,52 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	
 </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<script>
+	$(document).ready(
+			function() {
+				$("#mySearch").on(
+						"keyup",
+						function() {
+							var value = $(this).val().toLowerCase();
+							$("#myTable tr").filter(
+									function() {
+										$(this).toggle(
+												$(this).text().toLowerCase()
+														.indexOf(value) > -1)
+									});
+						});
+			});
+</script>
 </head>
 <body>
 	<nav th:replace="layout/nav :: navFragment"></nav>
-	<div class="container">
+	
 
 
 		<h1 align="center">Titanic Passengers</h1>
+		
+		
+	<!--  	<div>
 
+ 
+<form action="/passenger/search" method="POST" id="searchForm">
+<select class="col-sm-2" form="searchForm" name="searchField">
+<option value="name">Name</option>
+<option value="embarked">Embarked</option>
+<option value="passengerClass">Class</option>
+</select>
+
+<input type="text" class="col-sm-6" name="searchString" form="searchForm"></input>
+<button type="submit" value="search" form="searchForm" class="btn btn-primary col-sm-2">Search</button>
+</form>
+
+</div>-->
+<div class="container">
+
+<input class="form-control" id="mySearch" type="text"
+			placeholder="Search.." ></input>
 
 		<div class="alert alert-success" role="alert" th:if="${message}">
 
@@ -26,6 +63,7 @@
 
 		</div>
 
+<br />
 
 		<h4>Order by:</h4>
 		<a href="age"><button type="button" class="btn btn-primary-active">Age</button></a>
