@@ -36,10 +36,22 @@ public class PassengerRestServiceImpl implements PassengerRestService {
 	}
 
 	@Override
-	public Passenger update(Integer passengerId, Passenger passenger) {
+		public Passenger update(Integer passengerId, Passenger update) {
+			
+			Passenger passenger = this.passengerRepository.findOne(passengerId);
+			passenger.setSurvived(update.getSurvived());
+			passenger.setPclass(update.getPclass());
+			passenger.setName(update.getName());
+			passenger.setSex(update.getSex());
+			passenger.setAge(update.getAge());
+			passenger.setSib_sp(update.getSib_sp());
+			passenger.setParch(update.getParch());
+			passenger.setTicket(update.getTicket());
+			passenger.setFare(update.getFare());
+			passenger.setCabin(update.getCabin());
+			passenger.setEmbarked(update.getEmbarked());
 	
-		Passenger passengerToUpdate = this.passengerRepository.findOne(passengerId);
-		return passengerRepository.save(passengerToUpdate);
+			return passengerRepository.save(passenger);
 	
 	}
 
