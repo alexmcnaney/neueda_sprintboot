@@ -1,4 +1,4 @@
-package uk.ac.belfastmet.service;
+package uk.ac.belfastmet.titanic.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
