@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+</head>
+<title th:text="${pageTitle}">Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<style>
+.button2 {width: 250px;}
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+</style>
+<body>
+	<nav th:replace="layout/nav :: navFragment"></nav>
+	<div align="center">
+		<h2 th:text="${city}"></h2>
+			
+	
+		
+		<div class="btn-group">
+ <a href="/"> <button class="button2">Belfast</button></a>
+<a href="/dublin">  <button class="button2">Dublin</button></a>
+ <a href="/london"> <button class="button2">London</button></a>
+
+</div>
+	</div>
+		<div align="right">
+
+	</div>
+
+	<div class="container">
+	
+	<div class="alert alert-success" role="alert" th:if="${message}">
+	
+	<p th:text="${message}"></p>
+	
+	</div>
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+
+					<th>Description</th>
+					<th>Precipitation</th>
+					<th>Temperature</th>
+					<th>Humidity</th>
+					<th>Pressure</th>
+					<th>Cloud Cover</th>
+					<th>Wind Direction</th>
+					<th>Wind Speed</th>
+					<th>Image</th>
+				
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="weather : ${weather}">
+					<td th:text="${weather.description}"></td>
+					<td th:text="${weather.precipitation}"></td>
+					<td th:text="${weather.temperature}"></td>
+					<td th:text="${weather.humidity}"></td>
+					<td th:text="${weather.pressure}"></td>
+					<td th:text="${weather.cloudcover}"></td>
+					<td th:text="${weather.wind.direction}"></td>
+					<td th:text="${weather.wind.speed}"></td>
+					<td><img th:src="${weather.image}" width="90" height="90"/></td>
+				
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+</head>
+<title th:text="${pageTitle}">Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<body>
+	<nav th:replace="layout/nav :: navFragment"></nav>
+	<div class="jumbotron">
+		<h2 align="center">Cereal</h2>
+	</div>
+
+	<div class="container">
+	
+	<div class="alert alert-success" role="alert" th:if="${message}">
+	
+	<p th:text="${message}"></p>
+	
+	</div>
+
+	<div align="right"> <a href="/cereal/add">
+<button type="button" class="btn btn-default">Add New</button> </a> </div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+
+					<th>Description</th>
+					<th>Precipitation</th>
+					<th>Temperature</th>
+					<th>Humidity</th>
+					<th>Pressure</th>
+					<th>Cloud Cover</th>
+					<th>Wind</th>
+					<th></th>
+				
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="weather : ${weather}">
+					<td th:text="${weather.description}"></td>
+					<td th:text="${weather.prescipitation}"></td>
+					<td th:text="${weather.temperature}"></td>
+					<td th:text="${weather.humidity}"></td>
+					<td th:text="${weather.pressure}"></td>
+					<td th:text="${weather.cloudCover}"></td>
+					<td th:text="${weather.wind}"></td>
+					<td th:text="${weather.image}"></td>
+				
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</body>
+</html>
