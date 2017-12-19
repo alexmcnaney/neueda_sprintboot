@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+</head>
+<title th:text="${pageTitle}">Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<style>
+.button2 {width: 250px;}
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+</style>
+<body>
+	<nav th:replace="layout/nav :: navFragment"></nav>
+		<div class="jumbotron">
+	<h2 align="center"> Belfast Events </h2>
+	<br />
+			
+	</div>
+
+		<div align="right">
+
+	</div>
+
+	<div class="container">
+
+	
+	<table class="table table-hover">
+	<thead>
+				<tr>
+
+					<th>Title</th>
+					<th>Start Date</th>
+					<th>Time</th>
+					<th>Theme</th>
+					<th>Image</th>				
+					<th> </th>
+				
+
+				</tr>
+			</thead>
+		<tbody>
+	<tr th:each="event: ${events}">
+				
+	
+			<td th:text="${event.title}"></td>		
+			<td th:text="${#dates.format(event.startDate, 'dd/MM/yyyy')}">31/12/2017</td>
+			<td th:text="${event.time}"></td>
+			<td th:text="${event.theme}"></td>		
+			<td><img th:src="${event.image}" width="190" height="170"/></td>
+			<td><a href="#" th:href="@{event/view/} + ${event.identifier}">
+					<button type="button" class="btn btn-primary">View More</button> </a>  </td>
+				
+			
+			</tr>
+
+		</tbody>
+	</table>
+	</div>
+
+
+</body>
+</html>
