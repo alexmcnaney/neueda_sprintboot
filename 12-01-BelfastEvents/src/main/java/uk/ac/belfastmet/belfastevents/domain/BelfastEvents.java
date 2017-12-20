@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BelfastEvents {
 	
 private ArrayList<Event> allEvents = new ArrayList<Event>();
-;
+
 
 public BelfastEvents() {
 super();
