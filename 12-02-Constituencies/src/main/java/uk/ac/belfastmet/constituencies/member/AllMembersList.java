@@ -13,6 +13,8 @@ public class AllMembersList {
 
 	@JsonProperty("Member")
 	ArrayList<Member> members;
+	
+	
 
 }
 
