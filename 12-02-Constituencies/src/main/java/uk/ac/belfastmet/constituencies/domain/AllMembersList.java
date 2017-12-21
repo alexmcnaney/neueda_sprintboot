@@ -1,6 +1,4 @@
-package uk.ac.belfastmet.constituencies.member;
-
-
+package uk.ac.belfastmet.constituencies.domain;
 
 import java.util.ArrayList;
 
@@ -12,13 +10,5 @@ import lombok.Data;
 public class AllMembersList {
 
 	@JsonProperty("Member")
-	ArrayList<Member> members;
-	
-	
-
+	ArrayList<Member> members; 
 }
-
-
-
-
-

@@ -9,20 +9,18 @@ import org.springframework.web.client.RestTemplate;
 import uk.ac.belfastmet.belfastevents.domain.BelfastEvents;
 import uk.ac.belfastmet.belfastevents.domain.Event;
 
-
-
 @Controller
 @RequestMapping("")
 public class EventController {
 
 	public EventController() {
 
-	
-}
+	}
+
 	@GetMapping("/")
 	public String belfast(Model model) {
-		model.addAttribute("pageTitle", "Belfast Events");		
-		String belfastEventsURL = "https://neueda-flask-bndouglas.c9users.io/belfast-events/api/";		
+		model.addAttribute("pageTitle", "Belfast Events");
+		String belfastEventsURL = "https://neueda-flask-bndouglas.c9users.io/belfast-events/api/";
 		RestTemplate restTemplate = new RestTemplate();
 		BelfastEvents belfastEvents = restTemplate.getForObject(belfastEventsURL, BelfastEvents.class);
 		model.addAttribute("events", belfastEvents.getAllEvents());
@@ -30,23 +28,18 @@ public class EventController {
 		return "homePage";
 	}
 
-		
 	@GetMapping("event/view/{eventId}")
-	public String singleEvent(Model model, @PathVariable("eventId") String eventId)
-	{
+	public String singleEvent(Model model, @PathVariable("eventId") String eventId) {
 		model.addAttribute("pageTitle", "Event");
-		
-		
+
 		String belfastEventsUrl = "http://neueda-flask.bndouglas.c9users.io/belfast-events/api/";
-		
+
 		RestTemplate restTemplate = new RestTemplate();
 		BelfastEvents belfastEvents = restTemplate.getForObject(belfastEventsUrl, BelfastEvents.class);
 		Event requestedEvent = new Event();
-		
-		for(Event event: belfastEvents.getAllEvents())
-		{
-			if (event.getIdentifier().equals(eventId))
-			{
+
+		for (Event event : belfastEvents.getAllEvents()) {
+			if (event.getIdentifier().equals(eventId)) {
 				requestedEvent = event;
 			}
 
@@ -55,9 +48,4 @@ public class EventController {
 		return "viewEvent";
 	}
 
-	}
-	
-	
-	
-	
-	
+}

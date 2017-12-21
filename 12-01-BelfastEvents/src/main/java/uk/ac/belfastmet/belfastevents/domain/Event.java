@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-
 public class Event {
 
 	private String identifier, url, title, time;
@@ -18,8 +17,8 @@ public class Event {
 		super();
 	}
 
-	public Event(String identifier, String url, String title, Date startDate, Date endDate, String time,
-			String venue, String venueUrl, String image, String audience, String theme, String cost, String content) {
+	public Event(String identifier, String url, String title, Date startDate, Date endDate, String time, String venue,
+			String venueUrl, String image, String audience, String theme, String cost, String content) {
 		super();
 		this.identifier = identifier;
 		this.url = url;
@@ -92,8 +91,6 @@ public class Event {
 		this.venue = venue;
 	}
 
-	
-
 	public String getVenueUrl() {
 		return venueUrl;
 	}
@@ -141,10 +138,5 @@ public class Event {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
-	
-	
-	
-	
-	
+
 }
